@@ -1,4 +1,3 @@
-
 """
 MegaSpammer v1
 Python 3
