@@ -1,5 +1,5 @@
 """
-MegaSpammer v1
+MegaSpammer v1.1
 Python 3
 colebob9
 
@@ -16,8 +16,9 @@ secondsWait = 5
 # ask for input
 spamContent = input("Content of spam?: ")
 spamTimes = input("How many times?: ")
+spamDelay = input("Delay (in seconds) between messages? If not, enter 0. : ")
 
-input("Get ready, then, press enter to start countdown...")
+input("Get ready to select your text box, then, press enter to start countdown...")
 
 for s in range(secondsWait):
     print("Spamming in " + str(secondsWait) + " seconds...")
@@ -27,3 +28,4 @@ for s in range(secondsWait):
 for t in range(int(spamTimes)):
     pyautogui.typewrite(spamContent)
     pyautogui.typewrite(['enter'])
+    time.sleep(float(spamDelay))
