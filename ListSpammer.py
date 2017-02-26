@@ -8,7 +8,7 @@ Spams text from a text file.
 How to use:
 Use `pip3 install pyautogui`.
 
-Create a text file named `spam.txt` with the spam text inside.
+Create a text file named `spam.txt` with the spam text inside. Each line will be separated with an Enter keypress.
 """
 
 import pyautogui
