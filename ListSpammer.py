@@ -1,5 +1,5 @@
 """
-ListSpammer v1
+ListSpammer v1.1
 colebob9
 Python 3
 
@@ -14,17 +14,19 @@ Create a text file named `spam.txt` with the spam text inside. Each line will be
 import pyautogui
 import time
 
+# Config
 secondsWait = 5
+# End Config
 
+# Read spam.txt
 print("Reading spam file...")
 print('')
 f = open("spam.txt")
-global queueList
-queueList = f.readlines()
-queueList = [s.rstrip() for s in queueList] # stripping off \n
+spamList = f.readlines()
+spamList = [s.rstrip() for s in spamList] # stripping off \n
 f.close()
 print("Currently queued spam:")
-print(queueList)
+print(spamList)
 print('')
 
 spamDelay = input("Delay (in seconds) between lines? If not, enter 0. : ")
@@ -36,15 +38,7 @@ for s in range(secondsWait):
     time.sleep(1)
     secondsWait = secondsWait - 1
 
-queueNumber = 0
-
-while True:
-    try:
-        currentLine = queueList[queueNumber]
-        pyautogui.typewrite(currentLine)
-        pyautogui.typewrite(['enter'])
-        queueNumber = queueNumber + 1
-    except IndexError:
-        print('')
-        print("Done!")
-        break
+for l in spamList:
+    pyautogui.typewrite(l)
+    print(l)
+    pyautogui.typewrite(['enter'])
