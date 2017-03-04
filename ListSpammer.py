@@ -36,7 +36,7 @@ for s in range(secondsWait):
     print("Spamming in " + str(secondsWait) + " seconds...")
     time.sleep(1)
     secondsWait = secondsWait - 1
-    print("Spamming now!")
+print("Spamming now!")
 
 queueNumber = 0
 
