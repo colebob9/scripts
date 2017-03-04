@@ -1,5 +1,5 @@
 """
-ListSpammer v1.1
+ListSpammer v1.1.1
 colebob9
 Python 3
 
@@ -20,7 +20,6 @@ secondsWait = 5
 print("Reading spam file...")
 print('')
 f = open("spam.txt" , encoding='utf-8')
-global queueList
 queueList = f.readlines()
 queueList = [s.rstrip() for s in queueList] # stripping off \n
 f.close()
@@ -37,6 +36,7 @@ for s in range(secondsWait):
     print("Spamming in " + str(secondsWait) + " seconds...")
     time.sleep(1)
     secondsWait = secondsWait - 1
+    print("Spamming now!")
 
 queueNumber = 0
 
@@ -46,6 +46,7 @@ for t in times:
     while True:
         try:
             currentLine = queueList[queueNumber]
+            print("Spamming: " + currentLine)
             pyautogui.typewrite(currentLine)
             pyautogui.typewrite(['enter'])
             queueNumber = queueNumber + 1
